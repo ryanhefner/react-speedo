@@ -1,9 +1,9 @@
-import babel from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
-import json from 'rollup-plugin-json';
-import resolve from 'rollup-plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
-import pkg from './package.json';
+import babel from 'rollup-plugin-babel'
+import commonjs from 'rollup-plugin-commonjs'
+import json from 'rollup-plugin-json'
+import resolve from 'rollup-plugin-node-resolve'
+import { terser } from 'rollup-plugin-terser'
+import pkg from './package.json'
 
 const config = {
   input: 'src/index.js',
@@ -11,11 +11,16 @@ const config = {
     name: pkg.name,
     file: './index.js',
     format: 'umd',
-    globals: {},
-    banner: `/*! [banner info] !*/`,
-    footer: '/* [footer info] */',
+    globals: {
+      react: 'React',
+      'react-dom': 'ReactDOM',
+    },
+    banner: `/*! ${pkg.name} v${pkg.version} | (c) ${new Date().getFullYear()} Ryan Hefner | ${
+      pkg.license
+    } License | https://github.com/${pkg.repository} !*/`,
+    footer: '/* follow me on Twitter! @ryanhefner */',
   },
-  external: [],
+  external: ['react', 'react-dom'],
   plugins: [
     babel({
       exclude: 'node_modules/**',
@@ -28,10 +33,10 @@ const config = {
     }),
     json(),
   ],
-};
-
-if (process.env.NODE_ENV === 'production') {
-  config.plugins.push(terser());
 }
 
-export default config;
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(terser())
+}
+
+export default config

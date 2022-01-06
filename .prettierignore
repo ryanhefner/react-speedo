@@ -1,0 +1,8 @@
+# Build files
+es
+umd
+types
+./constants.js
+./index.js
+./Speedo.js
+./useSpeedo.js

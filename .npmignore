@@ -8,5 +8,9 @@ docs
 site
 
 # Configs
+./babelrc
+./eslintrc.js
+./prettierrc.json
 src/.babelrc
 rollup.config.js
+tsconfig.json

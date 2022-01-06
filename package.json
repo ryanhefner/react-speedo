@@ -1,19 +1,19 @@
 {
-  "name": "replace-me",
+  "name": "react-speedo",
   "version": "0.1.0",
-  "description": "[Package description here]",
-  "repository": {
-    "type": "git",
-    "url": "[your-git-repo]"
-  },
-  "author": "[Author Info]",
+  "description": "Tooling to help you monitor the performance of your React applications.",
+  "repository": "ryanhefner/react-speedo",
+  "author": "Ryan Hefner <hi@ryanhefner.com> (https://www.ryanhefner.com)",
   "license": "MIT",
   "files": [
     "es",
     "src",
     "types",
     "umd",
-    "index.js"
+    "index.js",
+    "constants.js",
+    "Speedo.js",
+    "useSpeedo.js"
   ],
   "directories": {
     "lib": "/src"
@@ -35,19 +35,34 @@
     "test:ci": "jest",
     "types": "tsc"
   },
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
+  },
+  "dependencies": {
+    "react-canvas-wrapper": "^0.5.2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.16.5",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^27.0.6",
     "babel-plugin-dev-expression": "^0.2.2",
     "babel-polyfill": "^6.26.0",
     "dtslint": "^4.0.6",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "gzip-size": "6.0.0",
     "jest": "^27.0.6",
+    "prettier": "^2.5.1",
     "pretty-bytes": "^5.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "regenerator-runtime": "^0.13.7",
     "rimraf": "^3.0.2",
     "rollup": "^2.36.1",
